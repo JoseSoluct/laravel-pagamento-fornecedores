@@ -1,0 +1,41 @@
+{
+    "name": "rede-cauzzo-mais/pagamento",
+    "description": "Pagamentos fornecedores CNAB 240 - Laravel",
+    "keywords": [
+        "CNAB240",
+        "pagamento",
+        "remessa",
+        "retorno"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bruno Almeida",
+            "email": "brunob1990@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2.0",
+        "ext-iconv": "*",
+        "ext-intl": "*",
+        "ext-mbstring": "*",
+        "laravel/framework": "^9.0|^10.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "RedeCauzzoMais\\Pagamento\\": "src/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
