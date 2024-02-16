@@ -50,7 +50,7 @@ $pagamentoPixEmail = new \RedeCauzzoMais\Pagamento\Pagamento\Banco\Sicredi\Pix( 
     'data'            => new \Carbon\Carbon(),
     'valor'           => 9.99,
     'numeroDocumento' => 0,
-    'pixTipo'         => Pix::CHAVE_PIX_EMAIL,
+    'pixTipo'         => \RedeCauzzoMais\Pagamento\Pagamento\Banco\Sicredi\Pix::CHAVE_EMAIL,
     'pixChave'        => 'brunob1990@gmail.com',
     'favorecido'      => new \RedeCauzzoMais\Pagamento\Pessoa( [] )
 ] );
@@ -94,7 +94,6 @@ $pagamentoCPF = new \RedeCauzzoMais\Pagamento\Pagamento\Banco\Sicredi\Pix( [
     ] ),
 ] );
 
-
 $remessa->addPagamento( $pagamentoTed );
 $remessa->addPagamento( $pagamentoPixEmail );
 $remessa->addPagamento( $pagamentoCPF );
@@ -103,6 +102,6 @@ $remessa->addPagamento( $transfer );
 
 $hoje = new \DateTime();
 
-$nomeclatura = $remessa->getCodigoCliente() . $hoje->format( 'd' ) . '1' . '00.REM';
+$nomeclatura = $remessa->getRemessaNomenclatura();
 
 echo $remessa->save( __DIR__ . DIRECTORY_SEPARATOR . 'arquivos' . DIRECTORY_SEPARATOR . $nomeclatura );
