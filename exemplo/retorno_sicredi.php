@@ -11,9 +11,23 @@ $retorno = new Sicredi( $path );
 echo $retorno->getBancoNome() . PHP_EOL . PHP_EOL;
 
 dump( $retorno->count() );
-dump( $retorno->totais );
+dump( $retorno->getTotais() );
+
+$extra = [
+    'codigo_empresa'     => $retorno->getHeader()->getCodigoCedente(),
+    'sequencial_arquivo' => $retorno->getHeader()->getNumeroSequencialArquivo(),
+];
 
 /** @var $registro \RedeCauzzoMais\Pagamento\Cnab\Retorno\Cnab240\Detalhe */
-//foreach ( $retorno as $registro ) {
-//    dump( $registro->toArray() );
-//}
+foreach ( $retorno as $registro ) {
+    try {
+        $comprovante = \RedeCauzzoMais\Pagamento\Comprovante\Banco\Sicredi\Factory::make( $registro, $extra );
+
+        file_put_contents( "/tmp/{$registro->getAutenticacao()}.pdf", $comprovante );
+
+        dump( $registro->toArray() );
+    } catch ( Exception $e ) {
+        dump( $e->getMessage() );
+    }
+}
+

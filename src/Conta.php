@@ -46,7 +46,7 @@ class Conta implements ContaContract
     {
         $this->banco = $banco;
 
-        $this->setBancoNome( Util::$bancos[$this->banco] ?? 'XXX' );
+        $this->setBancoNome( Util::bancoNome( $this->banco ) );
 
         return $this;
     }

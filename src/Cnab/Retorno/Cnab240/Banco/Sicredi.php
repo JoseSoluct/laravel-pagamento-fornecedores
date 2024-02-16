@@ -180,7 +180,7 @@ class Sicredi extends AbstractRetorno implements RetornoCnab240
              ->setVersaoLayoutArquivo( $this->rem( 164, 166, $header ) );
 
         if ( empty( $this->getHeader()->getNomeBanco() ) ) {
-            $this->getHeader()->setNomeBanco( Util::$bancos[$this->rem( 1, 3, $header )] );
+            $this->getHeader()->setNomeBanco( Util::bancoNome( $this->rem( 1, 3, $header ) ) );
         }
 
         return true;
@@ -222,6 +222,8 @@ class Sicredi extends AbstractRetorno implements RetornoCnab240
 
         if ( is_null( $d->getContaFavorecido() ) ) {
             $d->setContaFavorecido( ['pessoa' => ['nome' => '', 'documento' => '']] );
+
+            $d->setFavorecido( $d->getContaFavorecido()->getPessoa() );
         }
 
         if ( is_null( $d->getContaPagador() ) ) {
@@ -236,6 +238,8 @@ class Sicredi extends AbstractRetorno implements RetornoCnab240
                     'documento' => $this->getHeader()->getDocumentoEmpresa(),
                 ],
             ] );
+
+            $d->setPagador( $d->getContaPagador()->getPessoa() );
         }
 
         switch ( $this->getSegmentType( $detalhe ) ) {

@@ -22,7 +22,7 @@ abstract class AbstractRetorno implements Countable, SeekableIterator
     protected int    $increment  = 0;
     protected array  $file;
     protected array  $detalhe    = [];
-    public array  $totais     = [];
+    protected array  $totais     = [];
     private int      $_position  = 1;
 
     /**
@@ -52,7 +52,7 @@ abstract class AbstractRetorno implements Countable, SeekableIterator
 
     public function getBancoNome(): string
     {
-        return Util::$bancos[$this->codigoBanco] ?? Util::$bancos['XXX'];
+        return Util::bancoNome( $this->codigoBanco );
     }
 
     public function getDetalhes(): Collection
@@ -90,6 +90,11 @@ abstract class AbstractRetorno implements Countable, SeekableIterator
         $this->processado = true;
 
         return $this;
+    }
+
+    public function getTotais(): array
+    {
+        return $this->totais;
     }
 
     abstract protected function incrementDetalhe();
