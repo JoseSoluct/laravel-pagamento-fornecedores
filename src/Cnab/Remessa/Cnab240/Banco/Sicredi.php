@@ -203,8 +203,8 @@ class Sicredi extends AbstractRemessa implements RemessaContract
 
         $chavePix = match ( $pay->getPixTipo() ) {
             Pix::CHAVE_EMAIL => $pay->getPixChave(),
-            Pix::CHAVE_TELEFONE => '+' . Util::onlyNumbers( '$pay->getPixChave()' ),
-            Pix::CHAVE_ALEATORIA => Util::toMask( Util::onlyChars( '$pay->getPixChave()' ), '########-####-####-####-############' ),
+            Pix::CHAVE_TELEFONE => '+' . Util::onlyNumbers( $pay->getPixChave() ),
+            Pix::CHAVE_ALEATORIA => Util::toMask( Util::onlyChars( $pay->getPixChave() ), '########-####-####-####-############' ),
             default => '',
         };
 
