@@ -32,6 +32,8 @@ interface Detalhe
 
     public function getDataPagamento( string $format = 'd/m/Y' );
 
+    public function getValorDocumento();
+
     public function getValorPagamento();
 
     public function getPixTipo(): ?string;

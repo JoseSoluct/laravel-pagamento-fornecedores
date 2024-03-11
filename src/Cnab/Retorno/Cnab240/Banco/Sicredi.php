@@ -246,12 +246,13 @@ class Sicredi extends AbstractRetorno implements RetornoCnab240
         switch ( $this->getSegmentType( $detalhe ) ) {
             case 'A':
                 $d->setDataOcorrencia( $this->getHeader()->getDataGeracao( 'dmY' ) )
+                  ->setValorDocumento( Util::toFloat( $this->rem( 120, 134, $detalhe ) / 100, 2, false ) )
                   ->setOcorrencia( $this->rem( 231, 240, $detalhe ) )
                   ->setOcorrenciaDescricao( array_get( $this->ocorrencias, $d->getOcorrencia(), 'Desconhecida' ) )
                   ->setNossoNumero( $this->rem( 135, 154, $detalhe ) )
                   ->setNumeroDocumento( $this->rem( 74, 93, $detalhe ) )
-                  ->setDataPagamento( $this->rem( 94, 101, $detalhe ) )
-                  ->setValorPagamento( Util::toFloat( $this->rem( 120, 134, $detalhe ) / 100, 2, false ) )
+                  ->setDataPagamento( $this->rem( 155, 162, $detalhe ) )
+                  ->setValorPagamento( Util::toFloat( $this->rem( 163, 177, $detalhe ) / 100, 2, false ) )
                   ->setLoteServico( $this->rem( 4, 7, $detalhe ) )
                   ->setTipoRegistro( $this->rem( 8, 8, $detalhe ) )
                   ->setSegmento( $this->rem( 14, 14, $detalhe ) )

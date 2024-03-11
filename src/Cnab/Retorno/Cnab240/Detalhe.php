@@ -25,6 +25,7 @@ class Detalhe implements DetalheContract
     protected string  $nossoNumero;
     protected ?Carbon $dataOcorrencia = null;
     protected ?Carbon $dataPagamento  = null;
+    protected string  $valorDocumento;
     protected string  $valorPagamento;
 
     protected ?string $pixTipo  = null;
@@ -157,6 +158,18 @@ class Detalhe implements DetalheContract
     public function setValorPagamento( $valor ): static
     {
         $this->valorPagamento = $valor;
+
+        return $this;
+    }
+
+    public function getValorDocumento(): string
+    {
+        return $this->valorDocumento;
+    }
+
+    public function setValorDocumento( $valor ): static
+    {
+        $this->valorDocumento = $valor;
 
         return $this;
     }
