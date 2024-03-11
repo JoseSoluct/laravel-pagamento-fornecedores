@@ -404,8 +404,8 @@ class Sicredi extends AbstractRemessa implements RemessaContract
     /**
      * @throws Throwable
      */
-    public function getRemessaNomenclatura( int $incement = 0 ): string
+    public function getRemessaNomenclatura( int $increment = 0 ): string
     {
-        return $this->getCodigoCliente() . date( 'd' ) . Util::formatCnab( 9, $incement, 2 ) . '.REM';
+        return $this->getCodigoCliente() . date( 'd' ) . Util::formatCnab( 9, $increment, 2 ) . '.REM';
     }
 }
