@@ -219,7 +219,7 @@ class Sicredi extends AbstractRemessa implements RemessaContract
         }
 
         if ( !empty( $pay->getFavorecido()->getDocumento() ) ) {
-            $tipoInscricao = Util::onlyNumbers( $pay->getFavorecido()->getDocumento() ) == 14 ? 2 : 1;
+            $tipoInscricao = strlen( Util::onlyNumbers( $pay->getFavorecido()->getDocumento() ) ) == 14 ? 2 : 1;
         }
 
         $this->add( 1, 3, Util::onlyNumbers( $this->getCodigoBanco() ) ); // Código do Banco
