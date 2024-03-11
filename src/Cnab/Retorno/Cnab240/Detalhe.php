@@ -8,7 +8,7 @@ use RedeCauzzoMais\Pagamento\Contracts\Conta as ContaContract;
 use RedeCauzzoMais\Pagamento\Traits\MagicTrait;
 use RedeCauzzoMais\Pagamento\Util;
 use Carbon\Carbon;
-use Exception;
+use Throwable;
 
 class Detalhe implements DetalheContract
 {
@@ -167,7 +167,7 @@ class Detalhe implements DetalheContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function setPagador( array|PessoaContract $pagador ): static
     {
@@ -182,7 +182,7 @@ class Detalhe implements DetalheContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function setFavorecido( array|PessoaContract $favorecido ): static
     {
@@ -197,7 +197,7 @@ class Detalhe implements DetalheContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function setContaPagador( array|ContaContract $contaPagador ): static
     {
@@ -212,7 +212,7 @@ class Detalhe implements DetalheContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function setContaFavorecido( array|ContaContract $contaFavorecido ): static
     {

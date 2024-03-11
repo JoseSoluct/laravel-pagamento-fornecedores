@@ -7,6 +7,7 @@ use RedeCauzzoMais\Pagamento\Contracts\Pagamento\Pagamento as PagamentoContract;
 use RedeCauzzoMais\Pagamento\Util;
 use Carbon\Carbon;
 use Exception;
+use Throwable;
 
 abstract class AbstractPagamento implements PagamentoContract
 {
@@ -141,7 +142,7 @@ abstract class AbstractPagamento implements PagamentoContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function setFavorecido( PessoaContract $favorecido ): static
     {
@@ -217,7 +218,7 @@ abstract class AbstractPagamento implements PagamentoContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     final public function setNossoNumero(): void
     {

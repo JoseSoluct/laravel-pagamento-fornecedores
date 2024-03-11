@@ -2,9 +2,10 @@
 
 namespace RedeCauzzoMais\Pagamento\Pagamento\Banco\Sicredi;
 
-use Exception;
 use RedeCauzzoMais\Pagamento\Contracts\Pagamento\Pagamento as PagamentoContract;
 use RedeCauzzoMais\Pagamento\Pagamento\Banco\AbstractPagamento;
+use Exception;
+use Throwable;
 
 class Ted extends AbstractPagamento implements PagamentoContract
 {
@@ -51,7 +52,7 @@ class Ted extends AbstractPagamento implements PagamentoContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function setFinalidade( $finalidade ): static
     {

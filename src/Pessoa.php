@@ -4,6 +4,7 @@ namespace RedeCauzzoMais\Pagamento;
 
 use RedeCauzzoMais\Pagamento\Contracts\Pessoa as PessoaContract;
 use Exception;
+use Throwable;
 
 class Pessoa implements PessoaContract
 {
@@ -66,7 +67,7 @@ class Pessoa implements PessoaContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function setDocumento( $documento ): static
     {

@@ -10,6 +10,7 @@ use RedeCauzzoMais\Pagamento\Pagamento\Banco\Sicredi\Ted;
 use RedeCauzzoMais\Pagamento\Pagamento\Banco\Sicredi\Transfer;
 use RedeCauzzoMais\Pagamento\Util;
 use Exception;
+use Throwable;
 
 class Sicredi extends AbstractRemessa implements RemessaContract
 {
@@ -66,7 +67,7 @@ class Sicredi extends AbstractRemessa implements RemessaContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function addPagamento( PagamentoContract $pay ): static
     {
@@ -101,7 +102,7 @@ class Sicredi extends AbstractRemessa implements RemessaContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     protected function segmentoA( $nSequencialLote, PagamentoContract $pay ): static
     {
@@ -154,7 +155,7 @@ class Sicredi extends AbstractRemessa implements RemessaContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function segmentoB( $nSequencialLote, PagamentoContract $pay ): void
     {
@@ -193,7 +194,7 @@ class Sicredi extends AbstractRemessa implements RemessaContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function segmentoBPix( $nSequencialLote, PagamentoContract $pay ): void
     {
@@ -245,7 +246,7 @@ class Sicredi extends AbstractRemessa implements RemessaContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     protected function header(): static
     {
@@ -280,7 +281,7 @@ class Sicredi extends AbstractRemessa implements RemessaContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     protected function headerLote( $pay ): static
     {
@@ -327,7 +328,7 @@ class Sicredi extends AbstractRemessa implements RemessaContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     protected function trailerLote( $pay ): static
     {
@@ -348,7 +349,7 @@ class Sicredi extends AbstractRemessa implements RemessaContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     protected function trailer(): static
     {
@@ -401,7 +402,7 @@ class Sicredi extends AbstractRemessa implements RemessaContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function getRemessaNomenclatura( int $incement = 0 ): string
     {

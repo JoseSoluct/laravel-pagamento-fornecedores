@@ -10,6 +10,7 @@ use RedeCauzzoMais\Pagamento\Contracts\Pagamento\Pagamento;
 use RedeCauzzoMais\Pagamento\Pagamento\Banco\Sicredi\Pix;
 use RedeCauzzoMais\Pagamento\Util;
 use Exception;
+use Throwable;
 
 class Sicredi extends AbstractRetorno implements RetornoCnab240
 {
@@ -155,7 +156,7 @@ class Sicredi extends AbstractRetorno implements RetornoCnab240
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     protected function processarHeader( array $header ): bool
     {
@@ -187,7 +188,7 @@ class Sicredi extends AbstractRetorno implements RetornoCnab240
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     protected function processarHeaderLote( array $headerLote ): bool
     {
@@ -213,7 +214,7 @@ class Sicredi extends AbstractRetorno implements RetornoCnab240
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     protected function processarDetalhe( array $detalhe ): bool
     {
@@ -322,7 +323,7 @@ class Sicredi extends AbstractRetorno implements RetornoCnab240
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     protected function processarTrailerLote( array $trailer ): bool
     {
@@ -336,7 +337,7 @@ class Sicredi extends AbstractRetorno implements RetornoCnab240
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     protected function processarTrailer( array $trailer ): bool
     {

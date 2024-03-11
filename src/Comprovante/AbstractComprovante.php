@@ -5,8 +5,9 @@ namespace RedeCauzzoMais\Pagamento\Comprovante;
 use RedeCauzzoMais\Pagamento\Contracts\Comprovante\Comprovante as ComprovanteContract;
 use RedeCauzzoMais\Pagamento\Contracts\Cnab\Retorno\Detalhe as DetalheContract;
 use Knp\Snappy\Pdf;
-use Exception;
 use InvalidArgumentException;
+use Exception;
+use Throwable;
 
 abstract class AbstractComprovante implements ComprovanteContract
 {
@@ -15,7 +16,7 @@ abstract class AbstractComprovante implements ComprovanteContract
     abstract public static function make( DetalheContract $d, array $extra = [] ): string;
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function saveAs( string $path, string $filename, DetalheContract $detalhe ): bool
     {

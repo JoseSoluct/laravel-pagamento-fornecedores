@@ -5,12 +5,12 @@ namespace RedeCauzzoMais\Pagamento\Comprovante\Banco\Sicredi;
 use RedeCauzzoMais\Pagamento\Cnab\Retorno\Cnab240\AbstractRetorno;
 use RedeCauzzoMais\Pagamento\Cnab\Retorno\Cnab240\Detalhe;
 use InvalidArgumentException;
-use Exception;
+use Throwable;
 
 class Factory
 {
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public static function make( Detalhe $d, array $extra = [] ): string
     {

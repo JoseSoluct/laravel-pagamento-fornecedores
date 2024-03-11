@@ -5,6 +5,7 @@ namespace RedeCauzzoMais\Pagamento\Pagamento\Banco\Sicredi;
 use RedeCauzzoMais\Pagamento\Contracts\Pagamento\Pagamento as PagamentoContract;
 use RedeCauzzoMais\Pagamento\Pagamento\Banco\AbstractPagamento;
 use Exception;
+use Throwable;
 
 class Pix extends AbstractPagamento implements PagamentoContract
 {
@@ -71,7 +72,7 @@ class Pix extends AbstractPagamento implements PagamentoContract
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     function setTipoConta( string $tipoConta ): static
     {

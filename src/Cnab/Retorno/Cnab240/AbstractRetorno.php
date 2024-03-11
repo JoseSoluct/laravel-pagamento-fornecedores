@@ -3,7 +3,7 @@
 namespace RedeCauzzoMais\Pagamento\Cnab\Retorno\Cnab240;
 
 use RedeCauzzoMais\Pagamento\Cnab\Retorno\AbstractRetorno as AbstractRetornoGeneric;
-use Exception;
+use Throwable;
 
 abstract class AbstractRetorno extends AbstractRetornoGeneric
 {
@@ -72,7 +72,7 @@ abstract class AbstractRetorno extends AbstractRetornoGeneric
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function processar()
     {
@@ -138,7 +138,7 @@ abstract class AbstractRetorno extends AbstractRetornoGeneric
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     protected function getSegmentType( $line ): string
     {

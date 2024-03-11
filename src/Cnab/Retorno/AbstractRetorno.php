@@ -11,6 +11,7 @@ use OutOfBoundsException;
 use SeekableIterator;
 use Countable;
 use Exception;
+use Throwable;
 
 abstract class AbstractRetorno implements Countable, SeekableIterator
 {
@@ -26,7 +27,7 @@ abstract class AbstractRetorno implements Countable, SeekableIterator
     private int      $_position  = 1;
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function __construct( $file )
     {
@@ -104,7 +105,7 @@ abstract class AbstractRetorno implements Countable, SeekableIterator
     abstract protected function toArray(): array;
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     protected function rem( $i, $f, &$array ): string
     {

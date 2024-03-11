@@ -2,11 +2,12 @@
 
 namespace RedeCauzzoMais\Pagamento\Cnab\Remessa;
 
-use Exception;
 use Illuminate\Support\Collection;
 use RedeCauzzoMais\Pagamento\Contracts\Pagamento\Pagamento as PagamentoContract;
 use RedeCauzzoMais\Pagamento\Contracts\Pessoa as PessoaContract;
 use RedeCauzzoMais\Pagamento\Util;
+use Exception;
+use Throwable;
 
 abstract class AbstractRemessa
 {
@@ -334,7 +335,7 @@ abstract class AbstractRemessa
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function setBeneficiario( PessoaContract|array $beneficiario ): static
     {
@@ -380,7 +381,7 @@ abstract class AbstractRemessa
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function setCarteira( $carteira ): static
     {
@@ -444,7 +445,7 @@ abstract class AbstractRemessa
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     protected function add( $i, $f, $value ): array
     {
@@ -467,7 +468,7 @@ abstract class AbstractRemessa
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     protected function valida( array $a ): string
     {
@@ -484,7 +485,7 @@ abstract class AbstractRemessa
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function gerar()
     {
@@ -492,7 +493,7 @@ abstract class AbstractRemessa
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function save( $path )
     {
@@ -512,7 +513,7 @@ abstract class AbstractRemessa
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public function download( $filename = null ): void
     {

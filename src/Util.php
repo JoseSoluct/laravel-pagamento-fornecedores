@@ -2,11 +2,12 @@
 
 namespace RedeCauzzoMais\Pagamento;
 
-use Exception;
-use Illuminate\Support\Str;
-use NumberFormatter;
 use RedeCauzzoMais\Pagamento\Contracts\Conta as ContaContract;
 use RedeCauzzoMais\Pagamento\Contracts\Pessoa as PessoaContract;
+use Illuminate\Support\Str;
+use NumberFormatter;
+use Exception;
+use Throwable;
 
 final class Util
 {
@@ -165,7 +166,7 @@ final class Util
     }
 
     /**
-     * @throws Exception
+     * @throws Throwable
      */
     public static function removeInPosition( $begin, $end, &$array ): string
     {
