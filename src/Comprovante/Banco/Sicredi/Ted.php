@@ -46,7 +46,7 @@ class Ted extends AbstractComprovante implements ComprovanteContract
         $html[] = "<span style='padding-right: 90px'></span>";
         $html[] = "<strong>Conta Corrente:</strong> {$d->getContaPagador()->getConta()}-{$d->getContaPagador()->getContaDv()}";
         $html[] = "<span style='padding-right: 90px'></span>";
-        $html[] = "<strong>Impresso em:</strong> " . Carbon::now()->format( 'd/m/Y H:i:s' ) . "</p>";
+        $html[] = "<strong>Salvo em:</strong> " . Carbon::now()->format( 'd/m/Y H:i:s' ) . "</p>";
 
         $html[] = '<div style="border: 1px solid black; padding: 0 1rem;">';
         $html[] = "<h4 style=\"margin-bottom: 5px;\">TED {$ted} Titularidade</h4>";
