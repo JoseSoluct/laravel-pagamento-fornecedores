@@ -32,11 +32,14 @@ abstract class AbstractComprovante implements ComprovanteContract
         return file_put_contents( $path . $filename, static::make( $detalhe ) ) !== false;
     }
 
-    protected static function makePdf( string|array $html ): string
+    protected static function makePdf( string|array $html, $encoding = false ): string
     {
         $pdf = new Pdf( static::$binary );
 
-        $pdf->setOption( 'encoding', 'UTF-8' );
+        if ( $encoding !== false ) {
+            $pdf->setOption( 'encoding', $encoding );
+        }
+
         $pdf->setOption( 'page-size', 'A4' );
 
         return $pdf->getOutputFromHtml( $html );
