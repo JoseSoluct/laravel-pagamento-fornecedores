@@ -1,5 +1,5 @@
 {
-    "name": "rede-cauzzo-mais/pagamento",
+    "name": "jose-soluct/laravel-pagamento-fornecedores",
     "description": "Pagamentos fornecedores CNAB 240 - Laravel",
     "keywords": [
         "CNAB240",
@@ -13,6 +13,10 @@
         {
             "name": "Bruno Almeida",
             "email": "brunob1990@gmail.com"
+        },
+        {
+            "name": "José Alcides",
+            "email": "jose.alcides@soluct.com.br"
         }
     ],
     "require": {
